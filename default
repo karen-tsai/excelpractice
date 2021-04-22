@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Microsoft.Win32;
+using System.Data.OleDb;
+using System.Data.SQLite;
+
+namespace MISSampleApp
+{
+    public partial class Form1 : Form
+    {        
+        
+        public Form1()
+        {
+            InitializeComponent();
+
+        }
+
+        private void buttonImport_Click(object sender, EventArgs e)
+        {
+            OpenFile();
+
+        }
+        public void OpenFile()
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Excel Files|*.xlsx";
+            dialog.InitialDirectory = @"D:\下載\missampleapp-master\missampleapp-master\";
+            dialog.Title = "Please select excel.";
+            string fileName = "";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+
+                fileName = dialog.FileName;
+                
+            }
+        }
+
+        private void buttonGetData_Click(object sender, EventArgs e)
+        {
+            // Import Excel to DataGridview 
+            
+        }        
+
+        
+        private void button_InsertDB_Click(object sender, EventArgs e)
+        {
+            // Insert DataGridview data to SQLite DB
+        }
+
+        private void button_SQLQuery_Click(object sender, EventArgs e)
+        {
+            // SQLQuery       
+
+        }
+    }
+}
